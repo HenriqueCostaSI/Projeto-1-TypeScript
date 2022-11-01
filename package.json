@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "alurabank",
   "version": "1.0.0",
@@ -20,3 +21,27 @@
     "typescript": "^4.2.2"
   }
 }
+=======
+{
+  "name": "alurabank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "lite-server --baseDir=dist",
+    "start": "concurrently \"npm run watch\" \"npm run server\"",
+    "compile": "tsc",
+    "watch": "tsc -w"
+    
+    
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "lite-server": "^2.6.1",
+    "typescript": "^4.2.2"
+  }
+}
+>>>>>>> db2556171f9b2b2ce86f1cee816b3d84108ef503
