@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
     "compilerOptions": {
         "outDir": "dist/js",
@@ -8,15 +7,4 @@
         
     },
     "include": ["app/**/*"]
-=======
-{
-    "compilerOptions": {
-        "outDir": "dist/js",
-        "target": "ES6",
-        "noEmitOnError": true,
-        "noImplicitAny": true
-        
-    },
-    "include": ["app/**/*"]
->>>>>>> db2556171f9b2b2ce86f1cee816b3d84108ef503
 }
