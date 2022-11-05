@@ -1,18 +1,21 @@
-
 import { Negociacao } from "../models/negociacao.js";
 import { Negociacoes } from "../models/negociacoes.js";
+import { NegociacoesView } from "../views/negociacoes-view.js";
 /* The NegociacaoController class is responsible for creating a new Negociacao object and adding it to
 the list of Negociacoes. */
 export class NegociacaoController {
     constructor() {
         this.negociacoes = new Negociacoes();
+        this.negociacoesView = new NegociacoesView('#negociacoesView');
         this._inputData = document.querySelector('#data');
         this._inputQuantidade = document.querySelector('#quantidade');
         this._inputValor = document.querySelector('#valor');
+        this.negociacoesView.uptade(this.negociacoes);
     }
     adiciona() {
         const negociacao = this.criaNegociacao();
         this.negociacoes.adiciona(negociacao);
+        this.negociacoesView.uptade(this.negociacoes);
         console.log(this.negociacoes.lista());
         this.limparFormulario();
     }
@@ -35,4 +38,3 @@ export class NegociacaoController {
         this._inputData.focus();
     }
 }
-

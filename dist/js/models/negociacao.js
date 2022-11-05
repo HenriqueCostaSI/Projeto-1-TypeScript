@@ -1,6 +1,3 @@
-
-/* The Negociacao class has a private property called _data, a private property called _quantidade, a
-private property called _valor, and a public property called volume. */
 /*export class Negociacao {
         private _data: Date;
         private _quantidade: number;
@@ -13,24 +10,20 @@ private property called _valor, and a public property called volume. */
             this._valor = valor;
         }
 
-        get data() { return this._data; }
-        get quantidade() { return this._quantidade; }
-        get valor() { return this._valor; }
-        get volume() {
-            return this._valor * this._quantidade;
-        }
-    }*/
+*/
+/* The Negociacao class has a constructor that takes three parameters, all of which are private
+properties of the class, and three getters that return the values of those properties. */
 export class Negociacao {
-    constructor(_data, _quantidade, _valor) {
+    constructor(_data, quantidade, valor) {
         this._data = _data;
-        this._quantidade = _quantidade;
-        this._valor = _valor;
+        this.quantidade = quantidade;
+        this.valor = valor;
     }
-    get data() { return this._data; }
-    get quantidade() { return this._quantidade; }
-    get valor() { return this._valor; }
-    get volume() {
-        return this._valor * this._quantidade;
+    get data() {
+        const data = new Date(this._data.getTime());
+        return data;
     }
+    //get quantidade() { return this._quantidade; }
+    //get valor() { return this._valor; }
+    get volume() { return this.valor * this.quantidade; }
 }
-
