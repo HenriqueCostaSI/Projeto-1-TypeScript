@@ -14,8 +14,8 @@ export class NegociacaoController {
     private _inputQuantidade: HTMLInputElement;
     private _inputValor: HTMLInputElement;
     private negociacoes = new Negociacoes();
-    private negociacoesView = new NegociacoesView('#negociacoesView');
-    private mensagemView = new MensagemView('#mensagemView');
+    private negociacoesView = new NegociacoesView('#negociacoesView', true);
+    private mensagemView = new MensagemView('#mensagemView', false);
     private readonly DOMINGO = 0;
     private readonly SABADO = 6
 
@@ -28,7 +28,8 @@ export class NegociacaoController {
 
     public adiciona(): void {
 
-        const negociacao = this.criaNegociacao();
+        
+        const negociacao = Negociacao.criaDe(this._inputData.value, this._inputQuantidade.value, this._inputValor.value)
         if(!this.diaUtil(negociacao.data)){
             this.mensagemView.update('Apenas negociações em dias utéis são aceitas');
             return;
@@ -48,7 +49,7 @@ export class NegociacaoController {
      * The function criaNegociacao() returns a new Negociacao object, which is created by passing the
      * values of the input fields to the Negociacao constructor.
      * @returns A new instance of Negociacao class.
-     */
+     *
     private criaNegociacao(): Negociacao {
         const exp = /-/g;
         const date = new Date(this._inputData.value.replace(exp, ','));
@@ -56,7 +57,7 @@ export class NegociacaoController {
         const value = parseFloat(this._inputData.value);
 
         return new Negociacao( date, quantidade, value);
-    }
+    }*/
 
     private limparFormulario(): void {
         this._inputData.value = '';
